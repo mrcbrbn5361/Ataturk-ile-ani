@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaman Yolculuğu: Atatürk'le Bir Anı</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@1.0.0"
+        }
+      }
+    </script>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Zaman Yolculuğu: Atatürk'le Bir Anı</h1>
+            <p>Fotoğrafınızı yükleyin, yapay zeka sizi Atatürk'ün dönemine götürsün ve O'nunla yan yana bir anı yaratsın.</p>
+        </header>
+
+        <div class="controls">
+            <label for="image-upload" class="upload-btn">Fotoğraf Seç</label>
+            <input type="file" id="image-upload" accept="image/jpeg, image/png, image/webp" hidden>
+            <button id="submit-btn" disabled>Anı Yarat</button>
+        </div>
+
+        <p id="error-message" class="error" aria-live="polite"></p>
+        
+        <div class="image-comparison">
+            <div class="image-container">
+                <h2>Orijinal Fotoğraf</h2>
+                <div id="original-image-preview" class="preview-box">
+                    <p>Lütfen bir fotoğraf seçin</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <h2>Tarihi Anınız</h2>
+                <div id="generated-image-container" class="preview-box">
+                     <div id="loader" class="loader" hidden></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="index.tsx"></script>
+</body>
+</html>
